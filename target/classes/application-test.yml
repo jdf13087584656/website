@@ -1,0 +1,77 @@
+server:
+  port: 10010
+
+
+logging:
+  file: logs/spring-boot-logging.log
+  level:
+    com.hx.hsemanager: debug
+#    org:
+#      springframework:
+#        security: info
+
+system.path:
+  basePath: /data/hse/data/files    # 所有文件根目录
+  subpath: point,picture,voice,app,learning   #子目录
+  point: point
+  picture: picture
+  voice: voice
+  app: app
+  learning: learning
+  server-address: 39.104.113.61 #附件下载地址
+
+
+
+
+
+spring:
+#  profiles:
+#    include: datasource,mybatis
+
+  datasource:
+    url: jdbc:mysql://47.105.191.84:3306/xlkj_website?characterEncoding=UTF-8
+    username: root
+    password: Xienan187
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/jsp/
+#      suffix: .jsp
+
+  http:
+      multipart:
+        max-file-size: 100MB   #单个
+        max-request-size: 500MB   #总共
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.xlkj.website.dao.po
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #SQL语句控制台打印
+
+
+
+#  user:
+#    name: admin
+#    password: 123456
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
